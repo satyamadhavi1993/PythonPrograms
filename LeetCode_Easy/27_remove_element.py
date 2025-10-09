@@ -9,14 +9,12 @@ Return k.
 
 class Solution:
     def removeElement(self, nums: list[int], val: int) -> int:
-        p1 = p2 = 0
+        p = 0
         for num in nums:
             if not num == val:
-                nums[p2] = nums[p1]
-                p2 += 1
-            p1 += 1
-        print(nums)
-        return p2
+                nums[p] = num
+                p += 1
+        return p
             
     
 sol = Solution()
