@@ -5,21 +5,17 @@ answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
 answer[i] == "Fizz" if i is divisible by 3.
 answer[i] == "Buzz" if i is divisible by 5.
 answer[i] == i (as a string) if none of the above conditions are true.
-
 '''
-
-
-
 class Solution:
     def fizzBuzz(self, n: int) -> list[str]:
         answer = []
         for i in range(1, n+1):
-            temp = ""
+            temp = []
             if i % 3 == 0:
-                temp += "Fizz"
+                temp.append("Fizz")
             if i % 5 == 0:
-                temp += "Buzz"
-            answer.append(temp if temp else str(i))
+                temp.append("Buzz")
+            answer.append("".join(temp) or str(i))
         return answer
                 
 

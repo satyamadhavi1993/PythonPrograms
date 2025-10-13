@@ -5,7 +5,6 @@ Alphanumeric characters include letters and numbers.
 Given a string s, return true if it is a palindrome, or false otherwise.'''
 import re
 
-
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         s = s.lower()
@@ -14,7 +13,7 @@ class Solution:
             return True
         left = 0
         right = len(s2) - 1
-        while (left < right):
+        while left < right:
             if s2[left] != s2[right]:
                 return False
             left += 1

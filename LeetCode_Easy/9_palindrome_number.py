@@ -1,27 +1,25 @@
 # Given an integer x, return true if x is a palindrome, and false otherwise.
 
-def is_palindrome(x):
-    temp = abs(x)
-    result = 0
-    while temp > 0:
-        result = result*10 + temp%10
-        temp = temp//10
-    
-    return result == x
+class Solution {
+    public boolean isPalindrome(int x) {
+        if (x < 0) {
+            return false;
+        }
+        int temp = x;
+        int result = 0;
 
+        while (temp > 0) {
+            result = result * 10 + (temp % 10);
+            temp = temp / 10;
+        }
+        return result == x;
+    }
+}
 
-
-x = 121
-print(is_palindrome(x))
-x = -121
-print(is_palindrome(x))
-x = 10
-print(is_palindrome(x))
-x = -101
-print(is_palindrome(x)) 
-x = 12321
-print(is_palindrome(x))
-x = 123321
-print(is_palindrome(x))
-x = 0
-print(is_palindrome(x))
+sol = Solution()
+print(sol.is_palindrome(121))
+print(sol.is_palindrome(-121))
+print(sol.is_palindrome(10))
+print(sol.is_palindrome(12121))
+print(sol.is_palindrome(123321))
+print(sol.is_palindrome(0))

@@ -1,17 +1,25 @@
-def binarySearch(nums, target):
-    l = 0
-    r = len(nums) - 1
+'''
+Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
+
+You must write an algorithm with O(log n) runtime complexity.
+'''
+
+class Solution:
+    def search(self, nums: list[int], target: int) -> int:
+        l = 0
+        r = len(nums) - 1
+        
+        while l <= r:
+            mid = (l+r)//2
+            if nums[mid] < target:
+                l = mid + 1
+            elif nums[mid] > target:
+                r = mid - 1
+            else:
+                return mid
+        return -1
     
-    while l <= r:
-        mid = (l+r)//2
-        if nums[mid] < target:
-            l = mid + 1
-        elif nums[mid] > target:
-            r = mid - 1
-        else:
-            return mid
-    return -1
     
-    
-# Test
-print(binarySearch([-1,0,3,5,9,12], 9))  # 4
+sol = Solution()
+print(sol.search(nums = [-1,0,3,5,9,12], target = 9))
+print(sol.search([-1,0,3,5,9,12], target = 2))
