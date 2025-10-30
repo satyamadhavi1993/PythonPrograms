@@ -6,7 +6,7 @@ You can return the answer in any order.
 '''
 
 class Solution:
-    def two_sum(nums, target):
+    def two_sum(self, nums, target):
         dict1 = {}
         for i in range(len(nums)):
             num = target - nums[i]

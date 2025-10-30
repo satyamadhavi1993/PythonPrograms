@@ -10,10 +10,7 @@ class Solution:
             count[ord(s[i]) - ord('a')] += 1
             count[ord(t[i]) - ord('a')] -= 1
         
-        for c in count:
-            if c != 0:
-                return False
-        return True
+        return all(c == 0 for c in count)
     
     def isAnagram2(self, s, t):
         if not len(s) == len(t):
